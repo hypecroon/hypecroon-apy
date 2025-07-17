@@ -1,47 +1,36 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import YouTubeAds from './pages/services/YouTubeAds';
-import SpotifyAds from './pages/services/SpotifyAds';
-import AppleMusicAds from './pages/services/AppleMusicAds';
-import InstagramGrowth from './pages/services/InstagramGrowth';
-import InstagramFeaturing from './pages/services/InstagramFeaturing';
-import DigitalPublications from './pages/services/DigitalPublications';
-import MusicSubmission from './pages/MusicSubmission';
-import Blog from './pages/Blog';
-import Contact from './pages/Contact';
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
+import Guides from './pages/Guides';
+import Charts from './pages/Charts';
+import Ebooks from './pages/Ebooks';
+import Tools from './pages/Tools';
+import Resources from './pages/Resources';
+import Community from './pages/Community';
+import Profile from './pages/Profile';
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <div className="min-h-screen bg-black">
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services/youtube-ads" element={<YouTubeAds />} />
-              <Route path="/services/spotify-ads" element={<SpotifyAds />} />
-              <Route path="/services/apple-music-ads" element={<AppleMusicAds />} />
-              <Route path="/services/instagram-growth" element={<InstagramGrowth />} />
-              <Route path="/services/instagram-featuring" element={<InstagramFeaturing />} />
-              <Route path="/services/digital-publications" element={<DigitalPublications />} />
-              <Route path="/submit-music" element={<MusicSubmission />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </CartProvider>
+    <Router>
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/guides" element={<Guides />} />
+            <Route path="/charts" element={<Charts />} />
+            <Route path="/ebooks" element={<Ebooks />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
